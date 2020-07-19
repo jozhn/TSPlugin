@@ -1,0 +1,26 @@
+HKCR
+{
+	TS.TsSoft.1 = s 'TSPlugInterFace Class'
+	{
+		CLSID = s '{BCE4A484-C3BC-418B-B1F6-69D6987C126B}'
+	}
+	TS.TsSoft = s 'TSPlugInterFace Class'
+	{
+		CLSID = s '{BCE4A484-C3BC-418B-B1F6-69D6987C126B}'
+		CurVer = s 'TS.TsSoft.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {BCE4A484-C3BC-418B-B1F6-69D6987C126B} = s 'TSPlugInterFace Class'
+		{
+			ProgID = s 'TS.TsSoft.1'
+			VersionIndependentProgID = s 'TS.TsSoft'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{525CF7E5-DB36-491F-A91C-2DB86E67126D}'
+		}
+	}
+}
